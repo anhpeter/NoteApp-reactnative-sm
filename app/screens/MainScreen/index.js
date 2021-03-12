@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import AddNote from '../../components/AddNote';
 import AddNoteModal from '../../components/AddNoteModal';
 import MyButton from '../../components/MyButton';
@@ -45,11 +45,11 @@ export default function MainScreen() {
 
     return (
         <View style={styles.container}>
-            <MyButton style={styles.addButtonContainer}
-                textStyle={styles.addButtonText}
-                color="primary"
-                onPress={()=>setModalOpen(true)}
-                >Add Note</MyButton>
+            <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+                <TouchableOpacity>
+                    <Text onPress={()=>setModalOpen(true)}  style={styles.addButtonText} >Add Note</Text> 
+                </TouchableOpacity>
+            </View>
             <AddNoteModal isModalOpen={isModalOpen}
                 setModalOpen={setModalOpen}
                 addNote={addNote}></AddNoteModal>
@@ -64,9 +64,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-    },
-    addButtonContainer: {
-        alignItems: 'center'
     },
     addButtonText: {
         color: Color.primary,
