@@ -23,7 +23,7 @@ export default function AddNote({addNote, setModalOpen}) {
     };
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} >
             <View style={styles.inputStyle}>
                 <TextInput value={value}
                     onSubmitEditing={handleSubmitEditing}

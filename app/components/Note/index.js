@@ -30,8 +30,8 @@ export default function jNote({item, deleteNote, editNote}) {
             {
                 isEditing
                     ?
-                    <View style={styles.item}>
-                        <TextInput value={value} style={{color: '#fff'}}
+                    <View style={styles.input}>
+                        <TextInput value={value}
                             onBlur={handleBlur}
                             autoFocus={true}
                             onChangeText={handleChangeText}
@@ -58,6 +58,15 @@ const styles = StyleSheet.create({
         marginVertical: 5,
         color: '#fff',
         backgroundColor: 'dodgerblue',
+        borderRadius: 10,
+    },
+    input: {
+        padding: 10,
+        fontSize: 18,
+        height: 44,
+        borderColor: 'dodgerblue',
+        borderWidth: 0.5,
+        marginVertical: 5,
         borderRadius: 10,
     },
 });

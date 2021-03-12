@@ -45,9 +45,13 @@ export default function MainScreen() {
 
     return (
         <View style={styles.container}>
-            <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-                <TouchableOpacity>
-                    <Text onPress={()=>setModalOpen(true)}  style={styles.addButtonText} >Add Note</Text> 
+            <View style={{
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                paddingVertical: 20,
+            }}>
+                <TouchableOpacity onPress={()=>setModalOpen(true)} >
+                    <Text style={styles.addButtonText} >Add Note</Text> 
                 </TouchableOpacity>
             </View>
             <AddNoteModal isModalOpen={isModalOpen}
